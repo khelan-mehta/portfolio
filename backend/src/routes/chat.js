@@ -80,7 +80,7 @@ router.post('/', async (req, res) => {
     return res.status(400).json({ error: 'Message is required' })
   }
 
-  const apiKey = "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"
+  const apiKey = process.env.OPENAI_API_KEY
   if (!apiKey || apiKey === 'sk-your-openai-api-key-here') {
     // Fallback: use a template-based response if no API key
     return res.json({
